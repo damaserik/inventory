@@ -1,0 +1,5 @@
+select a.nama_barang as nm, sum(b.stok) as stok, b.id_barang as id_barang, b.harga as harga
+from barang as a 
+join stok_barang as b on a.id_barang = b.id_barang
+where b.stok >= 0 						  
+group by b.id_barang
